@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="InstallPage" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #1a1a2e; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Cabeçalho -->
+      <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="30.0" prefHeight="70.0" AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <Label text="📦 Instalador" style="-fx-font-size: 28px; -fx-text-fill: #fff;" />
+         </children>
+      </HBox>
+      
+      <!-- Imagem do jogo selecionado -->
+      <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="40.0" layoutY="105.0">
+         <image>
+            <Image url="@placeholder-cover.png" />
+         </image>
+      </ImageView>
+      
+      <!-- Informações do jogo -->
+      <Label fx:id="selectedGameTitle" text="Nome do Jogo" layoutX="40.0" layoutY="325.0" style="-fx-font-size: 24px; -fx-text-fill: #fff;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      
+      <Label fx:id="selectedGameDescription" text="" layoutX="40.0" layoutY="360.0" style="-fx-font-size: 16px; -fx-text-fill: #aaa;">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      
+      <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="420.0" prefWidth="700.0">
+         <children>
+            <Label text="📁 Onde instalar?" style="-fx-font-size: 18px; -fx-text-fill: #fff;" />
+         </children>
+      </HBox>
+      
+      <!-- Escolha de dispositivo e destino -->
+      <GridPane layoutX="40.0" layoutY="460.0" vgap="15" AnchorPane.topAnchor="460.0">
+         <children>
+            <!-- Botão "Explorar Drives" -->
+            <Button layoutX="40.0" text="💾 Explorar Drives / Pen Drive" onAction="#exploreExternalDrives" style="-fx-background-color: #16213e; -fx-text-fill: #fff; -fx-border-color: #444; -fx-border-radius: 8;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </Button>
+            
+            <!-- Botão "Navegar Pastas" -->
+            <Button text="📁 Navegar Pastas" onAction="#navigateFolders" style="-fx-background-color: #16213e; -fx-text-fill: #fff; -fx-border-color: #444; -fx-border-radius: 8;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </Button>
+            
+            <!-- Campo de Caminho -->
+            <TextField fx:id="targetPathField" promptText="Selecione o local de destino..." prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            
+            <!-- Botão "Instalar" -->
+            <Button fx:id="installButton" text="🚀 Instalar Agora!" onAction="#handleInstall" style="-fx-background-color: #4ecca3; -fx-text-fill: #000; -fx-font-size: 18px; -fx-padding: 15;" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            
+            <!-- Status da instalação -->
+            <Label fx:id="installStatusLabel" text="" style="-fx-font-size: 14px; -fx-text-fill: #ffd700;" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            
+            <!-- Checkbox AutoRunner & Rename Drive -->
+            <CheckBox fx:id="autoRunnerCheckBox" text="Auto-executar ao montar" selected="true" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <CheckBox fx:id="renameDriveCheckBox" text="Renomear unidade para o nome do jogo" selected="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      
+      <!-- Informações de armazenamento -->
+      <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="610.0" prefWidth="700.0">
+         <children>
+            <Label text="💾 Espaço disponível:" style="-fx-font-size: 16px; -fx-text-fill: #888;" />
+            <Label fx:id="availableSpaceLabel" text="" style="-fx-font-size: 16px; -fx-text-fill: #4ecca3;" />
+         </children>
+      </HBox>
+      
+      <!-- Rodapé -->
+      <Label layoutX="40.0" layoutY="760.0" text="⚠️ Após instalar, use o driver de boot para iniciar o jogo." style="-fx-font-size: 12px; -fx-text-fill: #888;" />
+   </children>
+</AnchorPane>
+<EOF>

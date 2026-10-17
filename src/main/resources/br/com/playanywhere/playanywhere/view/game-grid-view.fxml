@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="GameGridPage" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #16213e; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Cabeçalho -->
+      <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="30.0" prefHeight="60.0" prefWidth="1000.0" AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <Label text="🎮 Sua Biblioteca GOG" style="-fx-font-size: 28px; -fx-text-fill: #fff;" />
+         </children>
+      </HBox>
+      
+      <!-- Informações do usuário -->
+      <Label layoutX="110.0" layoutY="70.0" text="Usuário logado:" style="-fx-font-size: 16px; -fx-text-fill: #aaa;" />
+      <Label fx:id="usernameLabel" layoutX="350.0" layoutY="70.0" text="" style="-fx-font-size: 18px; -fx-text-fill: #ffd700;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      
+      <!-- Grid de jogos -->
+      <GridPane layoutX="40.0" layoutY="250.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <!-- Colunas dinâmicas serão adicionadas pelo controller -->
+            <Label text="📦 Jogos Disponíveis (Ordenados Alfabeticamente)" style="-fx-font-size: 20px; -fx-text-fill: #fff;" />
+         </children>
+      </GridPane>
+      
+      <!-- Rodapé -->
+      <Label layoutX="40.0" layoutY="760.0" text="📊 Total de jogos carregados será exibido no header." style="-fx-font-size: 12px; -fx-text-fill: #888;" />
+   </children>
+</AnchorPane>

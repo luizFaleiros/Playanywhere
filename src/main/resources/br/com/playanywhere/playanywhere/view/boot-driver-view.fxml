@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="BootDriverPage" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #1a1a2e; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <!-- Cabeçalho -->
+      <HBox alignment="CENTER_LEFT" layoutX="40.0" layoutY="30.0" prefHeight="70.0" AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <Label text="🚀 Driver de Boot Automático" style="-fx-font-size: 28px; -fx-text-fill: #fff;" />
+         </children>
+      </HBox>
+      
+      <!-- Imagem do jogo -->
+      <ImageView fitHeight="180.0" fitWidth="280.0" layoutX="40.0" layoutY="75.0">
+         <image>
+            <Image url="@placeholder-cover.png" />
+         </image>
+      </ImageView>
+      
+      <!-- Informações do jogo -->
+      <Label fx:id="driverGameTitle" text="Nome do Jogo" layoutX="40.0" layoutY="265.0" style="-fx-font-size: 22px; -fx-text-fill: #fff;">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      
+      <Label text="🔌 O driver será criado automaticamente no dispositivo de armazenamento." layoutX="40.0" layoutY="305.0" style="-fx-font-size: 16px; -fx-text-fill: #aaa;" />
+      <Label layoutX="40.0" layoutY="330.0" text="Quando inserido no computador, o jogo irá iniciar automaticamente!" style="-fx-font-size: 14px; -fx-text-fill: #888;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      
+      <!-- Botão "Criar Driver" -->
+      <Button fx:id="createDriverButton" text="📁 Criar Driver de Boot" onAction="#handleCreateDriver" layoutX="200.0" layoutY="390.0" style="-fx-background-color: #4ecca3; -fx-text-fill: #000; -fx-font-size: 18px; -fx-padding: 15;" />
+      
+      <!-- Status do driver -->
+      <Label fx:id="driverStatusLabel" text="" layoutX="40.0" layoutY="460.0" style="-fx-font-size: 14px; -fx-text-fill: #ffd700;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      
+      <!-- Caminho do driver -->
+      <VBox layoutX="40.0" layoutY="500.0" spacing="10">
+         <children>
+            <Label text="📂 Localização do Driver:" style="-fx-text-fill: #888;" />
+            <TextField fx:id="driverPathField" editable="false" prefHeight="30.0" promptText="/caminho/do/driver/auto-boot.exe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+      
+      <!-- Botão "Remover Driver" -->
+      <Button fx:id="removeDriverButton" text="🗑️ Remover Driver" onAction="#handleRemoveDriver" layoutX="200.0" layoutY="560.0" style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-padding: 10;" />
+      
+      <!-- Rodapé -->
+      <Label layoutX="40.0" layoutY="720.0" text="💡 O driver contém um script .bat que inicia o jogo automaticamente quando inserido no computador." style="-fx-font-size: 11px; -fx-text-fill: #888;">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
